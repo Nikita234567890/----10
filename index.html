@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вывод всех потомков body</title>
+</head>
+<body>
+    <h1>Пример документа</h1>
+    <p>Это абзац.</p>
+    <form>
+        <label for="inputField">Введите текст:</label>
+        <input type="text" id="inputField" name="inputField">
+        <input type="submit" value="Отправить">         // Отправление формы
+    </form>
+    <div> // Тег для создания блока контента. 
+        <p>Другой абзац внутри div.</p>
+    </div>
+    <script>
+        // Получаем ссылку на элемент body
+        var body = document.body;
+        // Получаем всех потомков тега body
+        var bodyChildren = body.children;
+        // Цикл, выполняющийся для каждого элемента в bodyChildren.
+        for (var i = 0; i < bodyChildren.length; i++) {
+            if (i < 2) {
+                // Выводим тип узла для первых двух элементов
+                document.write("Тип узла элемента " + i + ": " + bodyChildren[i].nodeType + "<br>");
+            }
+            // Выводим всех потомков тега body
+            document.write(bodyChildren[i].outerHTML + "<br>");
+            
+        }
+       
+    </script>
+</body>
+</html>
+
+
+
